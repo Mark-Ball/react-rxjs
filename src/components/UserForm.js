@@ -1,12 +1,17 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+
+import { setUserEmail } from '../actions';
 
 class UserForm extends Component {
     state = {
         email: ''
     };
     
-    onSubmit = () => {
-        //emit an action
+    onSubmit = event => {
+        event.preventDefault();
+        const { email } = this.state;
+        this.props.setUserEmail(email);
     };
     
     handleInputChange = event => {
@@ -30,4 +35,8 @@ class UserForm extends Component {
     }
 }
 
-export default UserForm;
+const mapDispatchToProps = {
+    setUserEmail
+};
+
+export default connect(null, mapDispatchToProps)(UserForm);
