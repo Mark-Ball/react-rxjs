@@ -30,6 +30,7 @@ class UserForm extends Component {
                     onChange={this.handleInputChange}
                     value={email}    
                 />
+                <input type='submit' />
             </form>
         )
     }
