@@ -5,3 +5,11 @@ export const setUserEmail = (email = '') => (
         payload: email 
     }
 );
+
+// action creator to set showPopup in the store to true
+// could this be toggle popup?
+export const showPopup = () => (
+    {
+        type: 'SHOW_POPUP'
+    }
+);
