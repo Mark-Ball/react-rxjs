@@ -8,8 +8,8 @@ export const setUserEmail = (email = '') => (
 
 // action creator to set showPopup in the store to true
 // could this be toggle popup?
-export const showPopup = () => (
+export const togglePopup = () => (
     {
-        type: 'SHOW_POPUP'
+        type: 'TOGGLE_POPUP'
     }
 );
