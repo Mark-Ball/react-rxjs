@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
 import { setUserEmail } from '../actions';
+import Popup from './Popup';
 
 class UserForm extends Component {
     state = {
@@ -19,25 +20,34 @@ class UserForm extends Component {
     };
     
     render() {
+        const { showPopup } = this.props;
         const { email } = this.state;
 
         return (
-            <form onSubmit={this.onSubmit}>
-                <input 
-                    type='text' 
-                    placeholder='enter email'
-                    name='email'
-                    onChange={this.handleInputChange}
-                    value={email}    
-                />
-                <input type='submit' />
-            </form>
+            <>
+                {showPopup && <Popup text={'Warning'}/>}
+                <form onSubmit={this.onSubmit}>
+                    <input 
+                        type='text' 
+                        placeholder='enter email'
+                        name='email'
+                        onChange={this.handleInputChange}
+                        value={email}    
+                    />
+                    <input type='submit' />
+                </form>
+            </>
         )
     }
 }
+
+const mapStateToProps = state => {
+    const { showPopup } = state.popup;
+    return { showPopup }
+};
 
 const mapDispatchToProps = {
     setUserEmail
 };
 
-export default connect(null, mapDispatchToProps)(UserForm);
+export default connect(mapStateToProps, mapDispatchToProps)(UserForm);
