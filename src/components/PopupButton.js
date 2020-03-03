@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
-import { togglePopup } from '../actions'
+import { showPopup } from '../actions'
 
 class PopupButton extends Component {
     onClick = () => {
-        this.props.togglePopup();
+        this.props.showPopup();
     };
     
     render() {
@@ -15,6 +15,6 @@ class PopupButton extends Component {
     }
 }
 
-const mapDispatchToProps = { togglePopup };
+const mapDispatchToProps = { showPopup };
 
 export default connect(null, mapDispatchToProps)(PopupButton);

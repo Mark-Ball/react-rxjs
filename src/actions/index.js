@@ -1,4 +1,3 @@
-// action creator to save a user's email into store
 export const setUserEmail = (email = '') => (
     {
         type: 'USER_EMAIL',
@@ -6,10 +5,14 @@ export const setUserEmail = (email = '') => (
     }
 );
 
-// action creator to set showPopup in the store to true
-// could this be toggle popup?
-export const togglePopup = () => (
+export const showPopup = () => (
     {
-        type: 'TOGGLE_POPUP'
+        type: 'SHOW_POPUP'
+    }
+);
+
+export const closePopup = () => (
+    {
+        type: 'CLOSE_POPUP'
     }
 );

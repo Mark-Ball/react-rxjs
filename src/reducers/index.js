@@ -1,9 +1,9 @@
 import { combineReducers } from 'redux';
 
 import userEmailReducer from './userEmailReducer';
-import togglePopupReducer from './togglePopupReducer';
+import showPopupReducer from './showPopupReducer';
 
 export default combineReducers({
     email: userEmailReducer,
-    popup: togglePopupReducer
+    popup: showPopupReducer
 });
